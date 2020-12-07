@@ -1,24 +1,19 @@
 # Aamar Pay codeigniter 
-
-
 ### Installation
-
 Require Codeigniter Version 3
-
 ### Clone Repositorie
 ```sh
 $ git clone https://github.com/sazzad362/Aamarpay-Codeigniter.git
 ```
-
 Copy those files on your project directory
 ```sh
 application/libraries/Aamarpay.php 
 application/helpers/aamarpay_helper.php
 application/controllers/Welcome.php 
 ```
-Setup API credentials 
-```sh
+### Setup API credentials 
 Open application/helpers/aamarpay_helper.php and change following with appropriate informations
+```sh
 define("STORE_ID", "");
 define("SIGNATURE_KEY", "");
 define("API_LINK", "");
@@ -30,11 +25,9 @@ Payment process example code: application/controllers/Welcome.php
   - check_payment
   - cancel
   - fail
- ### Setup Payment Process example
+### Setup Payment Process example
 ```sh
-1:Load aamarpay library 
 $this->load->library("aamarpay");
-2: Send Payment informations 
 $data = array();
 		$data['amount']        = '2000';
 		$data['payment_type']  = 'bKash';
@@ -60,7 +53,6 @@ $data = array();
 		$data['fail_url']      = base_url('welcome/fail');
 		$data['cancel_url']    = base_url('welcome/cancel');
 		$data['opt_a']         = 'Test Payment';
-3: Send to Aamarpay 
 $this->aamarpay->process($data)
 ```
  ### Setup Payment Validation Method
